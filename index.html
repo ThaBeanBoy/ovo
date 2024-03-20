@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>✨Birthday Poem</title>
+    <!-- <title>✨Birthday Poem</title> -->
+    <title>Mrs Chipoyera</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/tailwindcss@1.4.6/dist/base.min.css"
@@ -20,21 +21,42 @@
       rel="stylesheet"
       href="https://unpkg.com/tailwindcss@1.4.6/dist/utilities.min.css"
     />
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
       body {
         font-family: 'Poppins', sans-serif;
+        max-width: 480px;
+      }
+
+      section {
+        min-height: 100vh;
       }
 
       .stanza {
         margin-bottom: 52px !important;
       }
+
+      audio {
+        width: 100%;
+      }
+
+      ul {
+        list-style-type: none;
+      }
     </style>
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="prose max-w-lg px-4 mx-auto py-6 min-h-screen w-full">
-    <h1>Heart shakes like a Xibelani</h1>
+  <body
+    class="prose prose-ul:list-none max-w-lg px-4 mx-auto py-6 min-h-screen w-full"
+  >
+    <!-- <h1>Heart shakes like a Xibelani</h1>
     <audio src="./instrumental.mp3" controls loop></audio>
 
     <ul class="stanza">
@@ -69,6 +91,82 @@
     <ul class="list-none stanza">
       <li>Happy 20 years Ri</li>
       <li>As promised, a poem by <b>Tsongaspeare</b> 🤧🤧</li>
-    </ul>
+    </ul> -->
+
+    <section
+      id="password-screen"
+      class="flex flex-col items-center justify-center"
+    >
+      <div class="flex gap-2 items-center w-full mb-4 flex-col sm:flex-row">
+        <input
+          id="password-input"
+          class="block p-2 border min-w-none flex-1 rounded-lg text-center w-full sm:w-auto sm:text-left"
+          placeholder="password"
+          type="password"
+        />
+        <button
+          id="password-unlock-btn"
+          class="p-2 bg-blue-200 rounded-lg font-medium w-full sm:w-auto"
+        >
+          unlock
+        </button>
+      </div>
+
+      <img src="./password.gif" alt="waiting for password" />
+    </section>
+
+    <audio
+      class="password-protect hidden sticky top-2 rounded-lg"
+      src="./instrumental.mp3"
+      controls
+      loop
+    ></audio>
+
+    <section class="password-protect hidden capitalize">
+      <h2>table of content</h2>
+      <ul>
+        <li><a href="#poem">poem</a></li>
+        <li><a href="#fallen">fallen</a></li>
+      </ul>
+    </section>
+
+    <hr class="password-protect hidden" />
+
+    <section id="poem" class="password-protect hidden">
+      <h1 class="text-center">murhandziwa</h1>
+
+      <img src="./bear-hug.gif" alt="bear hug" />
+
+      <ul class="list-none stanza">
+        <li>As promised, a poem by <b>Tsongaspeare</b> 🤧🤧</li>
+      </ul>
+    </section>
+
+    <hr class="password-protect hidden" />
+
+    <section id="fallen" class="password-protect hidden">
+      <h2 class="text-center">Have you fallen yet?</h2>
+      <div class="flex gap-2">
+        <button
+          id="fallen-yes"
+          class="flex-1 p-2 bg-blue-200 rounded-lg font-medium w-full sm:w-auto"
+        >
+          yes
+        </button>
+        <button
+          id="fallen-no"
+          class="flex-1 p-2 bg-red-200 rounded-lg font-medium w-full sm:w-auto"
+        >
+          no
+        </button>
+      </div>
+
+      <p id="fallen-message" class="text-center"></p>
+
+      <img id="fallen-image" src="./curious-bear.gif" alt="curious" />
+    </section>
+
+    <script src="./js/password.js"></script>
+    <script src="./js/fallen.js"></script>
   </body>
 </html>
